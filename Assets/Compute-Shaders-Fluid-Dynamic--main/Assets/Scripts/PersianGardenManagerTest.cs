@@ -17,16 +17,15 @@ public class PersianGardenManagerTest : MonoBehaviour
     public Transform  Tran_downLeft;
     public Transform  Tran_upRight;
     public GameObject Fountain;
-    public Texture2D  boundaryTexture;
-
+    public Texture2D  boundaryTexture; 
 
     //___________
     // private
 
     private FluidGPUResources resources;
 
-    private RenderTexture     pressure_texture;
-    private RenderTexture     velocity_texture;
+    public RenderTexture     pressure_texture;
+    public RenderTexture     velocity_texture;
 
     private Camera            main_cam;
 
@@ -92,12 +91,13 @@ public class PersianGardenManagerTest : MonoBehaviour
         fluid_simulater.UpdateArbitaryBoundaryOffsets(boundaryTexture, resources);
 
 
-        Vector2 waterpipePosition = new Vector2(fluid_simulater.simulation_dimension / 2, fluid_simulater.simulation_dimension - fluid_simulater.simulation_dimension * 0.1f);
-        Vector2 waterPipeDirection = new Vector2(0.0f, -1.0f);
+        //Vector2 waterpipePosition = new Vector2(fluid_simulater.simulation_dimension / 2, fluid_simulater.simulation_dimension - fluid_simulater.simulation_dimension * 0.1f);
+        //Vector2 waterPipeDirection = new Vector2(0.0f, -1.0f);
+        //fluid_simulater.AddConstantForceSource(resources.velocity_buffer, waterpipePosition,
+        //                                waterPipeDirection, 6.4f, fluid_simulater.simulation_dimension * 0.0025f, fluid_simulater.simulation_dimension * 0.001f);
+
 
         fluid_simulater.AddUserForce           (resources.velocity_buffer                                   );
-        fluid_simulater.AddConstantForceSource(resources.velocity_buffer, waterpipePosition,
-                                                waterPipeDirection, 6.4f, fluid_simulater.simulation_dimension * 0.0025f, fluid_simulater.simulation_dimension * 0.001f);
 
         fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity);
         fluid_simulater.HandleArbitaryBoundary (resources.velocity_buffer, resources.boundary_velocity_offset_buffer, FieldType.Velocity);
