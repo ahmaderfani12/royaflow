@@ -8,11 +8,15 @@ using UnityEngine.VFX;
 public class VFXTextureBinder : MonoBehaviour
 {
     private VisualEffect _vfx;
-    [SerializeField] PersianGardenManagerTest _persianGardenDemoSceneMaster;
+    [SerializeField] GameObject _fluidObject;
+
+    private IFluidManager _fluidManager;
 
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
+        _fluidManager = _fluidObject.GetComponent<IFluidManager>();
+
         _vfx = GetComponent<VisualEffect>();
         BindTexture();
     }
@@ -20,8 +24,8 @@ public class VFXTextureBinder : MonoBehaviour
     [ContextMenu("Bind")]
     public void BindTexture()
     {
-        _vfx.SetTexture("VelocityTexture", _persianGardenDemoSceneMaster.velocity_texture);
-        _vfx.SetTexture("DyeTexture", _persianGardenDemoSceneMaster.fluid_simulater.visulasation_texture);
+        _vfx.SetTexture("VelocityTexture", _fluidManager.GetVelocity2D());
+        _vfx.SetTexture("DyeTexture", _fluidManager.GetDye2D());
         _vfx.SetInt("IsBinded", 1);
     }
 }

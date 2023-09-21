@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PersianGardenManagerTest : MonoBehaviour, IFluidManager
+public class Fluid3DManager : MonoBehaviour, IFluidManager
 {
 
     // ------------------------------------------------------------------
@@ -11,7 +11,7 @@ public class PersianGardenManagerTest : MonoBehaviour, IFluidManager
 
     //___________
     // public
-    public FluidSimulater fluid_simulater;
+    public FluidSimulater3D fluid_simulater;
 
     [Header("Fountain Managment")]
     public Transform  Tran_downLeft;

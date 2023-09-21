@@ -517,30 +517,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 607595559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16bb5d52685886c4bb155aede82d761f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a33d13a1c3de7e48876e2f95b2ce98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fluid_simulater:
-    StokeNavierShader: {fileID: 7200000, guid: df7f4f273ead5da46a16f2b380923bf9, type: 3}
-    SolverShader: {fileID: 7200000, guid: e3454dd6b2d82234d95b1976b13b637d, type: 3}
-    BorderShader: {fileID: 7200000, guid: a9218c8a4bd1ae5469748c6ee51ade44, type: 3}
-    StructuredBufferToTextureShader: {fileID: 7200000, guid: 2696eed86d6b69546b26735658355ea6,
+    StokeNavierShader: {fileID: 7200000, guid: 16f54eabd3bb23c45aa2983bc3955083, type: 3}
+    SolverShader: {fileID: 7200000, guid: 218477e9c76a73344b78e713db0e498f, type: 3}
+    BorderShader: {fileID: 7200000, guid: 287fc968700327443b634929ee1861f5, type: 3}
+    StructuredBufferToTextureShader: {fileID: 7200000, guid: 954acca8a4625a54693b02f9bf168955,
       type: 3}
-    UserInputShader: {fileID: 7200000, guid: 34a77dcc698611749a10834d32f57b79, type: 3}
+    UserInputShader: {fileID: 7200000, guid: 34afbff9cb5953c49996d0d6a7064971, type: 3}
     StructuredBufferUtilityShader: {fileID: 7200000, guid: 055ac4473d61fb445993e89239fc047c,
       type: 3}
-    canvas_dimension: 128
-    simulation_dimension: 128
+    canvas_dimension: 256
+    simulation_dimension: 256
     solver_iteration_num: 80
     grid_scale: 1
     time_step: 1
     Viscosity: 0.001
     force_strength: 1
-    force_radius: 5
+    force_radius: 8
     force_falloff: 0.01
     dye_radius: 8
     dye_falloff: 0.0001
-    velocity_dissapation: 1
+    velocity_dissapation: 0.999
     ApplyDyeKey: 324
     ApplyForceKey: 323
     commandBufferRefHolder: {fileID: 11400000, guid: 3457dbd5986d00f45b96d4284dd02dc9,
@@ -555,7 +555,7 @@ MonoBehaviour:
   VelocityDebugMat: {fileID: 2100000, guid: 99542d4bb6d51a04ea3da9c66ee9db76, type: 2}
   PressureDebugMat: {fileID: 2100000, guid: 46aea55d25769fe42bf39a6069852093, type: 2}
   DyeDebugMat: {fileID: 2100000, guid: ac4d5f6c58255ba4192cbab0ede1204d, type: 2}
-  MousePosDebug: {x: -1.650404, y: -5.087188, z: 0.60170096, w: 0.06866227}
+  MousePosDebug: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &922316173
 GameObject:
   m_ObjectHideFlags: 0

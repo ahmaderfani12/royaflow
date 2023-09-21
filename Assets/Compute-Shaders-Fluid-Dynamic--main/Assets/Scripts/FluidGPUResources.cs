@@ -52,7 +52,10 @@ public class FluidGPUResources
     {
         simulation_dimensions = (int) fso.simulation_dimension;
     }
-
+    public FluidGPUResources(FluidSimulater3D fso)       // The actual contructor used by the code
+    {
+        simulation_dimensions = (int)fso.simulation_dimension;
+    }
 
     // ------------------------------------------------------------------
     // DESTRUCTOR
