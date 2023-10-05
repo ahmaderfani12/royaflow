@@ -228,14 +228,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122822632}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.474, y: 0.554, z: -4.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3.102, y: 1.94, z: -4.82}
+  m_LocalScale: {x: 1.4425111, y: 1.4425111, z: 1.4425111}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &208801066
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607595559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1775243, y: 1.9048223, z: 0.49800056}
+  m_LocalPosition: {x: 1.63, y: 1.9048223, z: 0.49800056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -529,15 +529,15 @@ MonoBehaviour:
     UserInputShader: {fileID: 7200000, guid: 34afbff9cb5953c49996d0d6a7064971, type: 3}
     StructuredBufferUtilityShader: {fileID: 7200000, guid: 055ac4473d61fb445993e89239fc047c,
       type: 3}
-    canvas_dimension: 256
-    simulation_dimension: 256
+    canvas_dimension: 64
+    simulation_dimension: 64
     solver_iteration_num: 80
     grid_scale: 1
     time_step: 1
-    Viscosity: 0.001
+    Viscosity: 0.0005
     force_strength: 1
-    force_radius: 8
-    force_falloff: 0.01
+    force_radius: 5
+    force_falloff: 0.000001
     dye_radius: 8
     dye_falloff: 0.0001
     velocity_dissapation: 0.999
@@ -552,9 +552,10 @@ MonoBehaviour:
   boundaryTexture: {fileID: 2800000, guid: f66e9fd218be2f146a47e2d7c6d899da, type: 3}
   pressure_texture: {fileID: 0}
   velocity_texture: {fileID: 0}
-  VelocityDebugMat: {fileID: 2100000, guid: 99542d4bb6d51a04ea3da9c66ee9db76, type: 2}
+  VelocityDebugMat: {fileID: 2100000, guid: 82d7b71839efeb84d8639aca89d2fc76, type: 2}
   PressureDebugMat: {fileID: 2100000, guid: 46aea55d25769fe42bf39a6069852093, type: 2}
   DyeDebugMat: {fileID: 2100000, guid: ac4d5f6c58255ba4192cbab0ede1204d, type: 2}
+  TestVFXGraph: {fileID: 122822634}
   MousePosDebug: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &922316173
 GameObject:
@@ -866,7 +867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 99542d4bb6d51a04ea3da9c66ee9db76, type: 2}
+  - {fileID: 2100000, guid: 82d7b71839efeb84d8639aca89d2fc76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -991,7 +992,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021226352}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 5268c4b05bf755142905c87ddc51c64f, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: bae9f33a9a6660c4b8ba7ce49542953d, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0

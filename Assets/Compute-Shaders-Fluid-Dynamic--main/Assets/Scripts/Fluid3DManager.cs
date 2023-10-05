@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.VFX;
 
 public class Fluid3DManager : MonoBehaviour, IFluidManager
 {
@@ -25,7 +26,7 @@ public class Fluid3DManager : MonoBehaviour, IFluidManager
     private FluidGPUResources resources;
 
     public RenderTexture     pressure_texture;
-    public RenderTexture     velocity_texture;
+    public RenderTexture velocity_texture;
 
     private Camera            main_cam;
 
@@ -33,6 +34,7 @@ public class Fluid3DManager : MonoBehaviour, IFluidManager
     public Material VelocityDebugMat;
     public Material PressureDebugMat;
     public Material DyeDebugMat;
+    public VisualEffect TestVFXGraph;
     public Vector4 MousePosDebug;      // real hit pos, simulation hit pos
 
     // ------------------------------------------------------------------
@@ -46,9 +48,9 @@ public class Fluid3DManager : MonoBehaviour, IFluidManager
 
         //--
         // Initialize the fluid simulator engine
-        fluid_simulater.Initialize();
+        fluid_simulater.Initialize(); 
         resources = new FluidGPUResources(fluid_simulater);
-        resources.Create();
+        resources.Create3D(); 
 
         fluid_simulater.SubmitMousePosOverrideDelegate(GetMousePosInSimulationSpaceUnitValue);
 
@@ -56,7 +58,7 @@ public class Fluid3DManager : MonoBehaviour, IFluidManager
 
         
         // Create textures for visualizing presure or velocity
-        pressure_texture = new RenderTexture((int)fluid_simulater.canvas_dimension, (int)fluid_simulater.canvas_dimension, 0)
+        pressure_texture = new RenderTexture((int)fluid_simulater.canvas_dimension, (int)fluid_simulater.canvas_dimension, (int)fluid_simulater.canvas_dimension)
         {
             enableRandomWrite = true,
             useMipMap         = true,
@@ -68,23 +70,28 @@ public class Fluid3DManager : MonoBehaviour, IFluidManager
             
         };
         pressure_texture.Create();
-        velocity_texture = new RenderTexture((int)fluid_simulater.canvas_dimension, (int)fluid_simulater.canvas_dimension, 0)
+        velocity_texture = new RenderTexture((int)fluid_simulater.canvas_dimension, (int)fluid_simulater.canvas_dimension,0)
         {
             enableRandomWrite = true,
             useMipMap = true,
-            graphicsFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.R32G32_SFloat,
+            graphicsFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.R32G32B32_SFloat,
             filterMode = FilterMode.Trilinear,
             anisoLevel = 7,
-            format = RenderTextureFormat.RGFloat,
+            format = RenderTextureFormat.ARGBFloat,
             wrapMode = TextureWrapMode.Clamp,
+            dimension = UnityEngine.Rendering.TextureDimension.Tex3D,
+            volumeDepth = (int)fluid_simulater.canvas_dimension,
         };
         velocity_texture.Create();
+
 
         #endregion
 
         VelocityDebugMat.SetTexture("_MainTex", velocity_texture);
         PressureDebugMat.SetTexture("_MainTex", pressure_texture);
-        DyeDebugMat.SetTexture("_MainTex", fluid_simulater.visulasation_texture);
+        DyeDebugMat     .SetTexture("_MainTex", fluid_simulater.visulasation_texture);
+
+        TestVFXGraph.SetTexture("Texture3D", velocity_texture);
 
         //--
         // Build the Fluid Pipeline
@@ -97,26 +104,27 @@ public class Fluid3DManager : MonoBehaviour, IFluidManager
         //                                waterPipeDirection, 6.4f, fluid_simulater.simulation_dimension * 0.0025f, fluid_simulater.simulation_dimension * 0.001f);
 
 
-        fluid_simulater.AddUserForce           (resources.velocity_buffer                                   );
+        fluid_simulater.AddUserForce           (resources.velocity_buffer                                   );  //*
 
-        fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity);
-        fluid_simulater.HandleArbitaryBoundary (resources.velocity_buffer, resources.boundary_velocity_offset_buffer, FieldType.Velocity);
-        fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer, resources.boundary_pressure_offset_buffer);
+        //fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity);
+        //fluid_simulater.HandleArbitaryBoundary (resources.velocity_buffer, resources.boundary_velocity_offset_buffer, FieldType.Velocity);
+        //fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer, resources.boundary_pressure_offset_buffer);
         fluid_simulater.Diffuse                (resources.velocity_buffer                                   );
-        fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity               );
-        fluid_simulater.HandleArbitaryBoundary (resources.velocity_buffer, resources.boundary_velocity_offset_buffer, FieldType.Velocity);
-        fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer, resources.boundary_pressure_offset_buffer);
-        fluid_simulater.Advect                 (resources.velocity_buffer, resources.velocity_buffer, fluid_simulater.velocity_dissapation);
-        fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity               );
-        fluid_simulater.HandleArbitaryBoundary (resources.velocity_buffer, resources.boundary_velocity_offset_buffer, FieldType.Velocity);
-        fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer, resources.boundary_pressure_offset_buffer);
+        //fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity               );
+        //fluid_simulater.HandleArbitaryBoundary (resources.velocity_buffer, resources.boundary_velocity_offset_buffer, FieldType.Velocity);
+        //fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer, resources.boundary_pressure_offset_buffer);
+        //fluid_simulater.Advect                 (resources.velocity_buffer, resources.velocity_buffer, fluid_simulater.velocity_dissapation);
+
+        //fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity               );
+        //fluid_simulater.HandleArbitaryBoundary (resources.velocity_buffer, resources.boundary_velocity_offset_buffer, FieldType.Velocity);
+        //fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer, resources.boundary_pressure_offset_buffer);
 
         // Dye
-        fluid_simulater.AddDye(resources.dye_buffer);
-        fluid_simulater.Advect(resources.dye_buffer, resources.velocity_buffer, 0.992f);
-        fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
-        fluid_simulater.Diffuse(resources.dye_buffer);
-        fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
+        //fluid_simulater.AddDye(resources.dye_buffer);
+        //fluid_simulater.Advect(resources.dye_buffer, resources.velocity_buffer, 0.992f);
+        //fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
+        //fluid_simulater.Diffuse(resources.dye_buffer);
+        //fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
 
         fluid_simulater.Visualiuse(resources.dye_buffer, overrideOnCamera:false);
 

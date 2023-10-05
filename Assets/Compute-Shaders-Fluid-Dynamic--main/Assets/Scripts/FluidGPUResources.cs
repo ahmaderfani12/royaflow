@@ -95,9 +95,26 @@ public class FluidGPUResources
 
         cardinal_diections_LUT_Velocity.SetData(ArbitaryBoundaryLUTGenerator.GetVelocityLUT(), 0, 0,  32);
         cardinal_diections_LUT_Presure .SetData(ArbitaryBoundaryLUTGenerator.GetPressureLUT(), 0, 0,  32);
-        cardinal_diections_LUT_Dye     .SetData(ArbitaryBoundaryLUTGenerator.GetDyeLUT(),      0, 0,  32);
+        cardinal_diections_LUT_Dye     .SetData(ArbitaryBoundaryLUTGenerator.GetDyeLUT(),      0, 0,  32);       
+    }
+    public void Create3D()
+    {
+        velocity_buffer                   = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        dye_buffer                        = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        divergence_buffer                 = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        pressure_buffer                   = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        buffer_pong                       = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        buffer_ping                       = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        cardinal_diections_LUT_Velocity   = new ComputeBuffer(32                                           , sizeof(int)   * 4);
+        cardinal_diections_LUT_Presure    = new ComputeBuffer(32                                           , sizeof(int)   * 4);
+        cardinal_diections_LUT_Dye        = new ComputeBuffer(32                                           , sizeof(int)   * 4);
+        boundary_velocity_offset_buffer   = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        boundary_pressure_offset_buffer   = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
+        boundary_dye_offset_buffer        = new ComputeBuffer(simulation_dimensions * simulation_dimensions * simulation_dimensions, sizeof(float) * 4);
 
-        
+        cardinal_diections_LUT_Velocity.SetData(ArbitaryBoundaryLUTGenerator.GetVelocityLUT(), 0, 0,  32);
+        cardinal_diections_LUT_Presure .SetData(ArbitaryBoundaryLUTGenerator.GetPressureLUT(), 0, 0,  32);
+        cardinal_diections_LUT_Dye     .SetData(ArbitaryBoundaryLUTGenerator.GetDyeLUT(),      0, 0,  32);       
     }
 
     public static bool StaticResourcesCreated()

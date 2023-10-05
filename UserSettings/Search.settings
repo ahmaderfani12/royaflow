@@ -7,9 +7,15 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.E4EB812F" = "def"
+	"last_search.E4EB812F" = ""
 	"OpenInspectorPreview.E4EB812F" = "0"
 	"currentGroup.E4EB812F" = "all"
+	"last_search.BDE7F5D3" = "cub"
+	"OpenInspectorPreview.BDE7F5D3" = "0"
+	"currentGroup.BDE7F5D3" = "all"
+	"last_search.EE2249FF" = ""
+	"OpenInspectorPreview.EE2249FF" = "0"
+	"currentGroup.EE2249FF" = "all"
 }
 providers = {
 	adb = {
@@ -56,6 +62,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"shader:"
 ]
 searchItemFavorites = [
 ]
@@ -63,7 +70,7 @@ savedSearchesSortOrder = 0
 showSavedSearchPanel = false
 expandedQueries = [
 ]
-queryBuilder = false
+queryBuilder = true
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
