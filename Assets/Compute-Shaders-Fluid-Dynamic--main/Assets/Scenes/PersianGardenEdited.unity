@@ -492,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &607595561
 Transform:
   m_ObjectHideFlags: 0
@@ -556,6 +556,12 @@ MonoBehaviour:
   PressureDebugMat: {fileID: 2100000, guid: 46aea55d25769fe42bf39a6069852093, type: 2}
   DyeDebugMat: {fileID: 2100000, guid: ac4d5f6c58255ba4192cbab0ede1204d, type: 2}
   MousePosDebug: {x: -1.650404, y: -5.087188, z: 0.60170096, w: 0.06866227}
+--- !u!1 &723560634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7716039510591656696, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7716039510203660866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &922316173
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27adfc0961f740c4ba878523c1875d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fluidObject: {fileID: 607595559}
+  _fluidObject: {fileID: 723560634}
 --- !u!73398921 &2021226354
 VFXRenderer:
   serializedVersion: 1
@@ -1139,3 +1145,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &7716039510203660866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7716039510591656696, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_Name
+      value: FlowSimManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656696, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.084084
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9917064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.930134
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716039510591656702, guid: cecd52ab61b5e0b4d82d659c07a9e0eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: cecd52ab61b5e0b4d82d659c07a9e0eb, type: 3}
