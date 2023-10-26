@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a864f588276bab54f97335821add48a7, type: 3}
   m_Name: LimSSR
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   Settings:
     tracingMode: 1
     stepStrideLength: 0.02
@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
   m_Name: SSAO
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
   m_Settings:
     Downsample: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4268db87361095c4ca643764150c94d6, type: 3}
   m_Name: DepthPyramid
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   depthPyramidShader: {fileID: 7200000, guid: b2ead2c2a0fb2bc4d8ff715cbf4b0403, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
-  m_Name: URP-HighFidelity-Renderer
+  m_Name: URP-HighFidelity-Renderer-water
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7,
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 39
+    m_Bits: 16
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbbc6e3535a3d694aacf519cf85ae451, type: 3}
   m_Name: CommandPassFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   commandBufferRefHolder: {fileID: 11400000, guid: 3457dbd5986d00f45b96d4284dd02dc9,
     type: 2}
