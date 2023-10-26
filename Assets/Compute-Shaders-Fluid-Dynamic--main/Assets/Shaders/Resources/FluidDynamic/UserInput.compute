@@ -129,29 +129,35 @@ void AddForce_mouse(uint3 id : SV_DispatchThreadID) {
 
     float  mouse_mov_length = length(mouse_prev2Curr);
 
-    //float2 mouse2Grid = (float2)id.xy - _mouse_pos_current;
+    //*****
+    float2 mouse2Grid = (float2) id.xy - _mouse_pos_current;
 
-    //float M2GLength = length(mouse2Grid);
-    //if (M2GLength > epsilon)
+    float M2GLength = length(mouse2Grid);
+    float4 holdingForce=0;
+    if (M2GLength > epsilon)
+    {
+        float forceFactr = 1. - clamp(smoothstep(_force_effect_radius, _force_effect_radius + _force_falloff, M2GLength), 0., 1.);
 
-    //{
-    //    float forceFactr = 1. - clamp(smoothstep(_force_effect_radius, _force_effect_radius + _force_falloff, M2GLength), 0., 1.);
+        holdingForce = float4((mouse2Grid.xy / M2GLength) * forceFactr * _force_multiplier * 2., 0., 0.);
 
-    //    _user_applied_force_buffer[id2Dto1D(id.xy)] += float4((mouse2Grid.xy / M2GLength) * forceFactr * _force_multiplier *2., 0., 0.);
-
-    //} 
+    }
+    //*****
 
 
+    if (mouse_mov_length < epsilon)
+    {
+        _user_applied_force_buffer[id2Dto1D(id.xy)] += holdingForce;
+        return;
 
-    if (mouse_mov_length < epsilon) return; 
+    }
            
 
-    float cellCloseEnough = DrawHalfVectorWithLength(_mouse_pos_prev, mouse_prev2Curr / mouse_mov_length, mouse_mov_length,
+        float cellCloseEnough = DrawHalfVectorWithLength(_mouse_pos_prev, mouse_prev2Curr / mouse_mov_length, mouse_mov_length,
                                                (float2) id.xy, _force_effect_radius, _force_falloff);
     
-    _user_applied_force_buffer[id2Dto1D(id.xy)] += float4(cellCloseEnough * mouse_prev2Curr.xy * _force_multiplier, 0., 0.);
+        _user_applied_force_buffer[id2Dto1D(id.xy)] += float4(cellCloseEnough * mouse_prev2Curr.xy * _force_multiplier, 0., 0.);
 
-}
+    }
 
 //----------------------------------------------------------------------------
 // Add_constant_force_at DECLERNATIONS
