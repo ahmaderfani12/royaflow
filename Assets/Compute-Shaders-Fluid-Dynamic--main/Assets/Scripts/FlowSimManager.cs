@@ -105,13 +105,13 @@ public class FlowSimManager : MonoBehaviour, IFluidManager
         fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer);
 
         // Dye
-        //fluid_simulater.AddDye(resources.dye_buffer);
-        //fluid_simulater.Advect(resources.dye_buffer, resources.velocity_buffer, 0.992f);
+        fluid_simulater.AddDye(resources.dye_buffer);
+        fluid_simulater.Advect(resources.dye_buffer, resources.velocity_buffer, 0.992f);
         //fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
-        //fluid_simulater.Diffuse(resources.dye_buffer);
-        //fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
+        fluid_simulater.Diffuse(resources.dye_buffer);
+        fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
 
-        //fluid_simulater.Visualiuse(resources.dye_buffer, overrideOnCamera:false);
+        fluid_simulater.Visualiuse(resources.dye_buffer, overrideOnCamera:false);
 
         // End Dye
 
@@ -148,6 +148,7 @@ public class FlowSimManager : MonoBehaviour, IFluidManager
         {
             flowVFX.SetTexture("Velocity Texture", GetVelocity2D());
             flowVFX.SetTexture("Pressure Texture", GetPressure2D());
+            flowVFX.SetTexture("Dye Texture", GetDye2D()); 
             flowVFX.SetBool("Read Velocity", true);
         }
     }

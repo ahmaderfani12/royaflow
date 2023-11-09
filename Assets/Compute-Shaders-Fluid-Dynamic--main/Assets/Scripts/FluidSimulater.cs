@@ -825,10 +825,10 @@ public class FluidSimulater
 
         // ------------------------------------------------------------------------------
         // USER INPUT ADD DYE 
-        //UserInputShader.SetVector("_dye_color",         Color.HSVToRGB(0.2f, 0.8f, 0.6f));
+        UserInputShader.SetVector("_dye_color",         Color.HSVToRGB(1.0f, 0.0f, 1.0f));
         float randomHue = Mathf.Abs(Mathf.Sin(Time.time * 0.8f + 1.2f) + Mathf.Sin(Time.time * 0.7f + 2.0f));
               randomHue = randomHue - Mathf.Floor(randomHue);
-        UserInputShader.SetVector("_dye_color", Color.HSVToRGB(randomHue, Mathf.Abs(Mathf.Sin(Time.time * 0.8f + 1.2f))*0.2f + 0.8f, Mathf.Abs(Mathf.Sin(Time.time * 0.7f + 2.0f)) * 0.2f + 0.5f));
+        //UserInputShader.SetVector("_dye_color", Color.HSVToRGB(randomHue, Mathf.Abs(Mathf.Sin(Time.time * 0.8f + 1.2f))*0.2f + 0.8f, Mathf.Abs(Mathf.Sin(Time.time * 0.7f + 2.0f)) * 0.2f + 0.5f));
         UserInputShader.SetFloat ("_mouse_dye_radius",  dye_radius                      );
         UserInputShader.SetFloat ("_mouse_dye_falloff", dye_falloff                     );
 
