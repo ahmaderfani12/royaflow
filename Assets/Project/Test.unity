@@ -264,7 +264,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99000278}
-  m_LocalRotation: {x: 0, y: 0.14858618, z: -0, w: -0.98889947}
+  m_LocalRotation: {x: 0, y: 0.08437376, z: -0, w: -0.9964342}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -274,7 +274,7 @@ Transform:
   - {fileID: 1495312001}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 342.91, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 350.32, z: 0}
 --- !u!1001 &238811792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -577,7 +577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647164417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.27, z: -7.7}
+  m_LocalPosition: {x: 0, y: 3.27, z: -6.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -712,7 +712,7 @@ VisualEffect:
       - m_Value: 0.285
         m_Name: Specular Power
         m_Overridden: 1
-      - m_Value: 0.541
+      - m_Value: 0.503
         m_Name: Shadow Power
         m_Overridden: 1
       - m_Value: 1.24
@@ -720,6 +720,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 0.123
         m_Name: Turbulance Move Speed
+        m_Overridden: 1
+      - m_Value: 2.69
+        m_Name: Appearance
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
