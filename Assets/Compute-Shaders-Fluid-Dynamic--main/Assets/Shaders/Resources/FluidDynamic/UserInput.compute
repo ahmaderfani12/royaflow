@@ -128,6 +128,7 @@ void AddForce_mouse(uint3 id : SV_DispatchThreadID) {
     float2 mouse_prev2Curr  = _mouse_pos_current - _mouse_pos_prev;
 
     float  mouse_mov_length = length(mouse_prev2Curr);
+    mouse_mov_length = clamp(mouse_mov_length, 0, 5);
 
     //*****
     float2 mouse2Grid = (float2) id.xy - _mouse_pos_current;
