@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -775,7 +776,7 @@ public class FluidSimulater
     {
         if (!IsValid()) return false;
 
-        main_cam.AddCommandBuffer(CameraEvent.AfterEverything, sim_command_buffer);
+        //main_cam.AddCommandBuffer(CameraEvent.AfterEverything, sim_command_buffer);
         commandBufferRefHolder.CB = sim_command_buffer;
         return true;
     }
@@ -836,18 +837,22 @@ public class FluidSimulater
 
         float forceController = 0;
 
-        if (Input.GetKey(ApplyForceKey)) forceController = force_strength;
+        if (Input.GetKey(ApplyForceKey) &&
+            !EventSystem.current.IsPointerOverGameObject()) forceController = force_strength;
 
         UserInputShader.SetFloat ("_force_multiplier",    forceController               );
         UserInputShader.SetFloat ("_force_effect_radius", force_radius                  );
         UserInputShader.SetFloat ("_force_falloff",       force_falloff                 );
+
+        StokeNavierShader.SetFloat("_dissipationFactor", velocity_dissapation);
 
         float mouse_pressed = 0.0f;
 
         
         
 
-        if (Input.GetKey(ApplyDyeKey)) mouse_pressed = 1.0f;
+        if (Input.GetKey(ApplyDyeKey) &&
+            !EventSystem.current.IsPointerOverGameObject()) mouse_pressed = 1.0f;
 
         UserInputShader.SetFloat("_mouse_pressed", mouse_pressed);
 
@@ -926,6 +931,11 @@ public class FluidSimulater
             "Dispatch group numbers are, in x, y,z respectivly: {3}", 
             toDispatch.name, ComputeShaderUtility.GetKernelNameFromHandle(toDispatch, kernel), cb.name,
             group_nums.ToString()));
+    }
+
+    public void UpdateDissapationFactor(float disspationFactor)
+    {
+        sim_command_buffer.SetGlobalFloat("_dissipationFactor", disspationFactor);
     }
 }
 

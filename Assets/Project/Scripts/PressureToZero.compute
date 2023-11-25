@@ -1,0 +1,13 @@
+#pragma kernel CSMain
+
+RWTexture2D<float4> ResultTexture;
+float reductionSpeed = 0.3f;
+
+[numthreads(16,16,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float4 pixel = ResultTexture[id.xy];
+    pixel *= reductionSpeed;
+    
+    ResultTexture[id.xy] = pixel;
+}

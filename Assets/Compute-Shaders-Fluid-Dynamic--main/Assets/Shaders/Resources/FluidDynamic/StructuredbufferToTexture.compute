@@ -41,7 +41,7 @@ void PressureStructeredToTextureBillinearR32(uint3 id : SV_DispatchThreadID)
     float2 coord  = (float2)id.xy / (float)(_Pressure_Results_Resolution -1 );          // first normailizing the thread ids based on the targets resoltuion
            coord *= (float) (i_Resolution-1);                                           // remapping it to the coordinates of the structured buffer, but still as 2D ids. 
 
-           _Pressure_StructeredToTexture_Results_R32[id.xy] = StructuredBufferBilinearLoad(_Pressure_StructeredToTexture_Source_R32, coord);
+           _Pressure_StructeredToTexture_Results_R32[id.xy] += StructuredBufferBilinearLoad(_Pressure_StructeredToTexture_Source_R32, coord);
 
 }
 

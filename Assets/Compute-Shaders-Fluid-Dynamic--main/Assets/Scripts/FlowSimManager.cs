@@ -32,6 +32,8 @@ public class FlowSimManager : MonoBehaviour, IFluidManager
     public Material DyeDebugMat;
 
     public VisualEffect flowVFX;
+
+    public PressureTextureModifier pressureTextureModifier;
     // ------------------------------------------------------------------
     // INITALISATION
     void Start()
@@ -102,14 +104,15 @@ public class FlowSimManager : MonoBehaviour, IFluidManager
         fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer);
         fluid_simulater.Advect                 (resources.velocity_buffer, resources.velocity_buffer, fluid_simulater.velocity_dissapation);
         //fluid_simulater.HandleCornerBoundaries (resources.velocity_buffer, FieldType.Velocity               );
-        fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer);
+        //fluid_simulater.Project                (resources.velocity_buffer, resources.divergence_buffer, resources.pressure_buffer);
+        //fluid_simulater.Diffuse                (resources.velocity_buffer);
 
         // Dye
         fluid_simulater.AddDye(resources.dye_buffer);
-        fluid_simulater.Advect(resources.dye_buffer, resources.velocity_buffer, 0.992f);
+        fluid_simulater.Advect(resources.dye_buffer, resources.velocity_buffer, 0.95f);
         //fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
         fluid_simulater.Diffuse(resources.dye_buffer);
-        fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
+        //fluid_simulater.HandleCornerBoundaries(resources.dye_buffer, FieldType.Dye);
 
         fluid_simulater.Visualiuse(resources.dye_buffer, overrideOnCamera:false);
 
@@ -121,6 +124,7 @@ public class FlowSimManager : MonoBehaviour, IFluidManager
         fluid_simulater.BindCommandBuffer();
 
         UpdateVFXTexture();
+        pressureTextureModifier.SetRenderTexture(pressure_texture);
     }
 
     // ------------------------------------------------------------------
@@ -136,7 +140,12 @@ public class FlowSimManager : MonoBehaviour, IFluidManager
     void Update()
     {
         fluid_simulater.Tick(Time.deltaTime);
+    }
 
+    [ContextMenu("Test")]
+    public void Test()
+    {
+        fluid_simulater.UpdateDissapationFactor(0.8f);
     }
 
     // ------------------------------------------------------------------
