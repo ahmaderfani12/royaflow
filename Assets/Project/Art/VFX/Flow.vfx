@@ -1682,7 +1682,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture3D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":11700000,"guid":"fec784e64f231704284aec4d67ea02ff","type":2}}'
+      m_SerializableObject: '{"obj":{"fileID":11700000,"guid":"f9776e31265a2c341a2410168a8f8d8d","type":2}}'
     m_Space: 2147483647
   m_Property:
     name: 
@@ -9381,7 +9381,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture3D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":11700000,"guid":"fec784e64f231704284aec4d67ea02ff","type":2}}'
+      m_SerializableObject: '{"obj":{"fileID":11700000,"guid":"f9776e31265a2c341a2410168a8f8d8d","type":2}}'
     m_Space: 2147483647
   m_Property:
     name: DistanceField
@@ -14955,7 +14955,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616691}
   - {fileID: 8926484042661616692}
   - {fileID: 8926484042661616693}
-  Asset: {fileID: -3256353808211938606, guid: 9f5df7322e4ff9445ba991420928c71f, type: 3}
+  Asset: {fileID: -3256353808211938606, guid: 13151cefdafbd18429650477d3f7d336, type: 3}
 --- !u!114 &8926484042661616690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37997,7 +37997,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":5.992156982421875,"g":0.9411764740943909,"b":0.0,"a":1.0}'
+      m_SerializableObject: '{"r":8.474189758300782,"g":1.3310245275497437,"b":0.0,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: 

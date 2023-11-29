@@ -240,7 +240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99000278}
-  m_LocalRotation: {x: 0, y: 0.1641869, z: -0, w: -0.9864293}
+  m_LocalRotation: {x: 0, y: 0.15833068, z: -0, w: -0.98738617}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -250,7 +250,7 @@ Transform:
   - {fileID: 1495312001}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 341.1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 341.78, z: 0}
 --- !u!1001 &238811792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1028,10 +1028,10 @@ VisualEffect:
       - m_Value: 0.285
         m_Name: Specular Power
         m_Overridden: 1
-      - m_Value: 0.503
+      - m_Value: 0.65
         m_Name: Shadow Power
         m_Overridden: 1
-      - m_Value: 1.163
+      - m_Value: 1.35
         m_Name: Color Mul
         m_Overridden: 1
       - m_Value: 0.123
@@ -1073,7 +1073,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0, y: 8.969813, z: 77.87429, w: 0}
+      - m_Value: {x: 0, y: 11.043138, z: 95.87451, w: 0}
         m_Name: Dye Color
         m_Overridden: 1
     m_Uint:
@@ -1145,77 +1145,6 @@ MonoBehaviour:
   m_Bindings:
   - {fileID: 1036803610}
   m_VisualEffect: {fileID: 1036803608}
---- !u!1001 &1187791586
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.76
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 622e213eb7f167d43a44640973e5cbb8,
-        type: 3}
-      propertyPath: m_Name
-      value: Taq (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 622e213eb7f167d43a44640973e5cbb8, type: 3}
 --- !u!1 &1199468589
 GameObject:
   m_ObjectHideFlags: 0
