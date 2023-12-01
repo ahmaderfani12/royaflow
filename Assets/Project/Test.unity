@@ -240,7 +240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99000278}
-  m_LocalRotation: {x: 0, y: 0.15833068, z: -0, w: -0.98738617}
+  m_LocalRotation: {x: 0, y: 0.15108854, z: -0, w: -0.98852026}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -250,7 +250,7 @@ Transform:
   - {fileID: 1495312001}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 341.78, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 342.62, z: 0}
 --- !u!1001 &238811792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647164417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.27, z: -7.33}
+  m_LocalPosition: {x: 0, y: 3.27, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 1036803611}
   - component: {fileID: 1036803610}
   m_Layer: 0
-  m_Name: Flow
+  m_Name: FlowTaq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,7 +1028,7 @@ VisualEffect:
       - m_Value: 0.285
         m_Name: Specular Power
         m_Overridden: 1
-      - m_Value: 0.65
+      - m_Value: 0.575
         m_Name: Shadow Power
         m_Overridden: 1
       - m_Value: 1.35
@@ -1241,6 +1241,212 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1342602460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342602465}
+  - component: {fileID: 1342602464}
+  - component: {fileID: 1342602463}
+  - component: {fileID: 1342602462}
+  - component: {fileID: 1342602461}
+  m_Layer: 0
+  m_Name: FlowMosque
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1342602461
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342602460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: Model Transform
+  Target: {fileID: 783994807}
+--- !u!114 &1342602462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342602460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 1
+  m_Bindings:
+  - {fileID: 1342602461}
+  m_VisualEffect: {fileID: 1342602464}
+--- !u!73398921 &1342602463
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342602460}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &1342602464
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342602460}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 6612717bab1224849abfaee46bdd791c, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 19.6
+        m_Name: SDF Scalaer
+        m_Overridden: 1
+      - m_Value: 0.41
+        m_Name: Sphere Shadow Power
+        m_Overridden: 1
+      - m_Value: 0.261
+        m_Name: Specular Strenght
+        m_Overridden: 1
+      - m_Value: 0.285
+        m_Name: Specular Power
+        m_Overridden: 1
+      - m_Value: 0.65
+        m_Name: Shadow Power
+        m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: Color Mul
+        m_Overridden: 1
+      - m_Value: 0.123
+        m_Name: Turbulance Move Speed
+        m_Overridden: 1
+      - m_Value: 3
+        m_Name: Appearance
+        m_Overridden: 1
+      - m_Value: 0.144
+        m_Name: Texture Saturation
+        m_Overridden: 1
+      - m_Value: 0.132
+        m_Name: Texture Value
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Golden Rain
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 0, y: 180, z: 0}
+        m_Name: Model Transform_angles
+        m_Overridden: 1
+      - m_Value: {x: -0, y: 0, z: 0}
+        m_Name: Model Transform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: Model Transform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.5, y: 9.3, z: 4.98}
+        m_Name: SDF Offset
+        m_Overridden: 1
+      - m_Value: {x: 0.39, y: 1.03, z: -4.52}
+        m_Name: Specular Light Dir
+        m_Overridden: 1
+      - m_Value: {x: 28.02, y: -12.79, z: -1.32}
+        m_Name: Pressure Effect Light Dir
+        m_Overridden: 1
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 0, y: 11.043138, z: 95.87451, w: 0}
+        m_Name: Dye Color
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array:
+      - m_Value: {fileID: 0}
+        m_Name: Pressure Texture
+        m_Overridden: 1
+      - m_Value: {fileID: 0}
+        m_Name: Velocity Texture
+        m_Overridden: 1
+    m_Bool:
+      m_Array:
+      - m_Value: 0
+        m_Name: Read Velocity
+        m_Overridden: 1
+--- !u!4 &1342602465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342602460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495312000
 GameObject:
